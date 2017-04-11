@@ -4,5 +4,5 @@ THIS_DIR=`readlink -f $0`
 THIS_DIR=${THIS_DIR%/*}
 APK=$1
 APK_DIR=${1%%.apk}
-#java -jar $THIS_DIR/apktool.jar d $APK
+java -jar $THIS_DIR/apktool.jar d $APK -o $APK_DIR
 sed -i 's/android:resizeableActivity=\"[a-z]*\"//g' $APK_DIR/AndroidManifest.xml
